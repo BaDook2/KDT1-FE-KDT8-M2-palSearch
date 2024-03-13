@@ -1,0 +1,15 @@
+{
+  "name": "kdt8-m2",
+  "version": "1.0.0",
+  "description": "<aside> ⭐ 직원들을 관리할 수 있는 관리자 서비스를 만들어 보세요. 과제를 진행하시다가 **기술적으로 도움이 필요한 부분**이 생기시면 **멘토링 요청서에 질문으로 남긴 후, 주차별 멘토링 시간 때 멘토님께 질문**해 주시기 바랍니다❗",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "vite": "^5.1.6"
+  }
+}
