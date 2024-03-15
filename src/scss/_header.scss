@@ -1,0 +1,57 @@
+header {
+  height: 15vh;
+
+  .inner {
+    height: 15vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      bottom: -5px;
+      left: 0;
+      background-color: var(--color-jyp);
+      height: 2px;
+      width: 100%;
+    }
+  }
+
+  .utils {
+    display: flex;
+    align-items: flex-end;
+    gap: 1em;
+
+    a:hover {
+      background-color: var(--color-black-10);
+    }
+
+    .manage {
+      font-size: 1.8em;
+      color: var(--color-black-70);
+    }
+
+    .search {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: var(--color-black-70);
+    }
+
+    .gridbox {
+      width: 1.5em;
+      height: 1.5em;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+
+      div {
+        background-color: var(--color-black-50);
+      }
+    }
+  }
+
+}

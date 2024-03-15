@@ -1,4 +1,4 @@
-import { Component } from "../core/core";
+import Component from "../core/core";
 
 export default class TheFooter extends Component{
   constructor(){
