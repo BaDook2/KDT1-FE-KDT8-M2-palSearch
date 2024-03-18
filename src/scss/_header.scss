@@ -3,9 +3,8 @@ header {
 
   .inner {
     height: 15vh;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-end;
     position: relative;
 
@@ -40,7 +39,24 @@ header {
       color: var(--color-black-70);
     }
 
-    .gridbox {
+    .list-icon {
+      width: 1.5em;
+      height: 1.5em;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+
+      div {
+        background-color: var(--color-black-50);
+        flex-grow:1;
+      }
+    }
+    .list-icon.hide{
+      display: none;
+    }
+
+    .grid-icon {
       width: 1.5em;
       height: 1.5em;
       display: grid;
@@ -52,6 +68,10 @@ header {
         background-color: var(--color-black-50);
       }
     }
+    .grid-icon.hide{
+      display: none;
+    }
+
   }
 
 }
