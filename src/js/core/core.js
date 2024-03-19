@@ -6,3 +6,11 @@ export default class Component{
   }
   render(){}
 }
+
+export class Store{
+  constructor(payload = {}){
+    const {tagName = "div", palObj = {}} = payload;
+    this.el = document.createElement(tagName);
+  }
+  render(){}
+}

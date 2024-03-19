@@ -12,8 +12,9 @@ html {
 a,
 button {
   text-decoration: none;
-  outline: none;
+  border: none;
   background-color: white;
+  box-sizing: border-box;
   color: black;
   cursor: pointer;
 }
@@ -21,8 +22,8 @@ button {
 .inner {
   width: var(--inner-with);
   margin:0 auto;
-
   height: 100vh;
+  
 }
 
 main {

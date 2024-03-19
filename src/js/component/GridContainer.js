@@ -1,15 +1,17 @@
 import Component from "../core/core"
 
-class GridCircle extends Component{
+
+class GridItem extends Component{
   constructor(){
     super({tagName: 'li'});
     this.el.classList.add('grid-circle');
   }
 }
 
-export default class GridList extends Component{
+export default class GridContainer extends Component{
   constructor(){
     super({tagName:'ul'})
+    this.el.classList.add('grid-container')
   }
   render(){
   }

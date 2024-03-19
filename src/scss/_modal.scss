@@ -1,0 +1,53 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+  background-color: white;
+  display: flex;
+  padding: 1em;
+  border: 2px solid black;
+  z-index: 1;
+
+  .close-icon{
+    position:absolute;
+    top:0;
+    right:0;
+  }
+
+  img {
+    width: 40%;
+  }
+
+  .information__container {
+    flex-grow:1;
+    display: flex;
+    flex-direction: column;
+    gap:1em;
+    .container {
+      display: flex;
+      flex-direction: column;
+      margin-left: .5em;
+    }
+    .enroll__button{
+      margin: 0 auto;
+      width: 50%;
+      border: 2px solid var(__color-black-50);
+
+      &:hover{
+        color: white;
+        background-color: var(--color-black-50);
+      }
+    }
+  }
+}
+
+.enroll__modal{
+  opacity:1;
+  transition: opacity .5s, visibility .5s;
+  &.hide{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
