@@ -6,9 +6,20 @@ import FlexContainer from "./component/FlexContainer";
 import palStore from "./Store/palInfo";
 
 
+
 const bodyEl = document.querySelector('body');
 
 bodyEl.append(new App().el);
+
+// 로딩화면을 위한 setTimeout
+(async () => {
+  await new Promise(resolve => {
+      setTimeout(() => {
+          resolve();
+      }, 2000); // 2초 후에 실행
+  });
+
+
 
 // Header
 const headerComponent = document.querySelector('header');
@@ -173,3 +184,6 @@ listIconEl.addEventListener('click', () => {
   gridIconEl.classList.toggle('hide');
   listIconEl.classList.toggle('hide');
 })
+
+
+})();
