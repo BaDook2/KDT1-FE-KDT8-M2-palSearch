@@ -18,26 +18,29 @@
 
   img {
     width: 40%;
+    border: 2px solid var(--color-black-50);
   }
 
   .information__container {
     flex-grow:1;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap:1em;
+    padding-left:1em;
     .container {
       display: flex;
       flex-direction: column;
-      margin-left: .5em;
     }
     .enroll__button{
       margin: 0 auto;
-      width: 50%;
-      border: 2px solid var(__color-black-50);
+      width: 100%;
+      padding: 3px;
+      box-sizing: border-box;
 
       &:hover{
         color: white;
-        background-color: var(--color-black-50);
+        background-color: var(--color-black-10);
       }
     }
   }

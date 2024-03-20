@@ -14,17 +14,25 @@ export default class FlexItem extends Store {
     this.el.innerHTML = /* html */ `
     <img src = ${palObj["image"]} alt="photo" class = "profile__photo">
     <div class = "profile__description">
-    <span>id = ${palObj["id"]}</span>
-    <span>key = ${palObj["key"]}</span>
-    <span>name = ${palObj["name"]}</span>
+    <span>id =<span class = "value-change">${palObj["id"]}</span>
+    </span>
+    <span>key =<span class = "value-change">${palObj["key"]}</span>
+    </span>
+    <span>name =<span class = "value-change">${palObj["name"]}</span>
+    </span>
     </div>
     <button class = "modify__button hide">Modify</button>
     <button class = "modify--confirm__button hide">Confirm</button>
     `
-    const closeIcon = new MaterialSymbol().el;
-    closeIcon.classList.add('close-icon', 'hide');
-    closeIcon.textContent = "close";
-    this.el.append(closeIcon);
+
+    const deleteItemIcon = new MaterialSymbol().el;
+    const closeModifyIcon = new MaterialSymbol().el;
+    deleteItemIcon.classList.add('delete-icon', 'hide');
+    closeModifyIcon.classList.add('close-icon', 'hide');
+
+    deleteItemIcon.textContent = "close";
+    closeModifyIcon.textContent = "close";
+    this.el.append(deleteItemIcon, closeModifyIcon);
 
     return this.el;
   }

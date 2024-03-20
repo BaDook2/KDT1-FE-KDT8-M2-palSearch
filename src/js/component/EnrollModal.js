@@ -1,5 +1,18 @@
-import Modal from "./Modal";
 import MaterialSymbol from "./MaterialSymbol";
+import Component from "../core/core";
+
+class Modal extends Component {
+  constructor() {
+    super({
+      tagName: 'dialog'
+    });
+    this.el.setAttribute('open','');
+    this.el.classList.add('modal', 'hide');
+  }
+  render(){
+    
+  }
+}
 
 export default class EnrollModal extends Modal {
   render() {
