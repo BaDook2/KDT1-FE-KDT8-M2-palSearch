@@ -2,7 +2,7 @@ import Component from "../core/core";
 
 export default class Loading extends Component{
   constructor(){
-    super();
+    super({tagName:'section'});
     this.el.classList.add('loading');
   }
   render(){

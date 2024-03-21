@@ -3,7 +3,9 @@ import FlexItem from "./FlexItem";
 
 export default class FlexContainer extends Store{
   constructor(palObjArr = {}){
-    super();
+    super({
+      tagName:'ul'
+    });
     this.el.classList.add('flex-container');
     this.render(palObjArr)
   }
@@ -13,3 +15,4 @@ export default class FlexContainer extends Store{
     }
   }
 }
+

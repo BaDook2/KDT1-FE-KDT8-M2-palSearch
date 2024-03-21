@@ -12,7 +12,7 @@ export default class FlexItem extends Store {
 
   render(palObj) {
     this.el.innerHTML = /* html */ `
-    <img src = ${palObj["image"]} alt="photo" class = "profile__photo">
+    <img src = "../../../api${palObj["image"]}" alt="${palObj["name"]}_photo" class = "profile__photo">
     <div class = "profile__description">
     <span>id =<span class = "value-change">${palObj["id"]}</span>
     </span>

@@ -5,19 +5,17 @@ import FlexItem from "./component/FlexItem";
 import FlexContainer from "./component/FlexContainer";
 import palStore from "./Store/palInfo";
 
-
-
 const bodyEl = document.querySelector('body');
 
 bodyEl.append(new App().el);
 
 // 로딩화면을 위한 setTimeout
-(async () => {
-  await new Promise(resolve => {
-      setTimeout(() => {
-          resolve();
-      }, 2000); // 2초 후에 실행
-  });
+// (async () => {
+//   await new Promise(resolve => {
+//       setTimeout(() => {
+//           resolve();
+//       }, 2000); // 2초 후에 실행
+//   });
 
 
 
@@ -25,7 +23,7 @@ bodyEl.append(new App().el);
 const headerComponent = document.querySelector('header');
 
 // Search Container
-const searchIconEl = headerComponent.querySelector('.search--icon');
+// const searchIconEl = headerComponent.querySelector('.search--icon');
 const searchInputEl = headerComponent.querySelector('.search--input');
 
 // Search Event
@@ -36,6 +34,7 @@ searchInputEl.addEventListener('keydown', (event) => {
     if (inputValue === '') return palObjectArr;
     let palFilteredStorage = [];
     palObjectArr.forEach((palObj) => {
+      console.log(Object.values(palObj))
       if (Object.values(palObj).includes(inputValue)) {
         palFilteredStorage.push(palObj);
       }
@@ -44,7 +43,8 @@ searchInputEl.addEventListener('keydown', (event) => {
   }
   if (event.keyCode === 13) {
     const inputValue = searchInputEl.value;
-    const newPalStorage = searchPal(new palStore().el, inputValue);
+    const newPalStorage = searchPal(new palStore(["id","key","name"]
+    ).el, inputValue);
     flexContainerEl.innerHTML = '';
     flexContainerEl.append(new FlexContainer(newPalStorage).el);
   }
@@ -186,4 +186,4 @@ listIconEl.addEventListener('click', () => {
 })
 
 
-})();
+// })();
