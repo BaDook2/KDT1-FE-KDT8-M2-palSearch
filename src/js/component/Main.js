@@ -3,6 +3,7 @@ import GridContainer from "./GridContainer";
 import Inner from "./Inner";
 import FlexContainer from "./FlexContainer";
 import palStore from "../Store/palInfo";
+import ViewMore from "./ViewMore";
 
 export default class Main extends Component {
   constructor() {
@@ -14,6 +15,6 @@ export default class Main extends Component {
     this.el.append(innerEl);
     // innerEl.append(new GridContainer().el);
     const itemStorage = new palStore().el;
-    innerEl.append(new FlexContainer(itemStorage).el);
+    innerEl.append(new FlexContainer(itemStorage).el, new ViewMore().el);
   }
 }

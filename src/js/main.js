@@ -76,10 +76,12 @@ enrollOpenButton.addEventListener('click', () => {
   enrollModal.classList.toggle('hide');
   modifyButtonEls.forEach(button => {
     button.classList.add('hide');
-    flexContainerEl.querySelector('.modify--confirm__button').classList.add('hide');
-    flexContainerEl.querySelector('.close-icon').classList.add('hide');
+    button.parentNode.querySelector('.modify--confirm__button').classList.add('hide');
+    button.parentNode.querySelector('.close-icon').classList.add('hide');
   });
-  profileCloseIconEls.forEach(el => el.classList.add('hide'));
+  const inputEls = document.querySelectorAll('.temporary-input');
+  inputEls.forEach(input=>input.parentNode.removeChild(input));
+  profileDeleteIconEls.forEach(el => el.classList.add('hide'));
 })
 
 enrollConfirmButton.addEventListener('click', () => {
@@ -102,7 +104,9 @@ enrollCloseButton.addEventListener('click', () => {
 })
 
 // Manage Modify
+const valueChangeInput = document.querySelectorAll('.value-change')
 const modifyButtonEls = document.querySelectorAll('.modify__button');
+
 modifyOpenButton.addEventListener('click', () => {
   modifyButtonEls.forEach(button => {
     button.classList.toggle('hide');
@@ -110,7 +114,7 @@ modifyOpenButton.addEventListener('click', () => {
     buttonParentEl.querySelector('.modify--confirm__button').classList.add('hide');
     buttonParentEl.querySelector('.close-icon').classList.add('hide');
   });
-  profileCloseIconEls.forEach(el => el.classList.add('hide'));
+  profileDeleteIconEls.forEach(el => el.classList.add('hide'));
   enrollModal.classList.add('hide');
 })
 
@@ -125,12 +129,14 @@ modifyButtonEls.forEach(modifyButton => {
 
     clickedParentEl.querySelectorAll('.value-change').forEach(el => {
       const inputEl = document.createElement('input');
+      inputEl.classList.add('temporary-input');
       el.innerHTML = ''; // 기존 내용 제거
       el.appendChild(inputEl); // input 요소를 추가
     });
   });
 
   const closeModifyIcon = modifyButton.parentNode.querySelector('.close-icon');
+  
   closeModifyIcon.addEventListener('click', () => {
     const clickedParentEl = closeModifyIcon.parentNode;
     const modifyConfirmButton = clickedParentEl.querySelector('.modify--confirm__button');
@@ -153,17 +159,19 @@ modifyConfirmButtonEls.forEach(confirmButton => {
 
 // Manage Delete
 const profileEls = document.querySelectorAll(`.profile`);
-const profileCloseIconEls = document.querySelectorAll('.delete-icon');
+const profileDeleteIconEls = document.querySelectorAll('.delete-icon');
 
 deleteOpenButton.addEventListener('click', () => {
-  profileCloseIconEls.forEach(el => el.classList.toggle('hide'));
+  profileDeleteIconEls.forEach(el => el.classList.toggle('hide'));
+
   modifyButtonEls.forEach(button => {
     button.classList.add('hide');
-    flexContainerEl.querySelector('.modify--confirm__button').classList.add('hide');
-    flexContainerEl.querySelector('.close-icon').classList.add('hide');
+    button.parentNode.querySelector('.modify--confirm__button').classList.add('hide');
+    button.parentNode.querySelector('.close-icon').classList.add('hide');
   });
   enrollModal.classList.add('hide');
-
+  const inputEls = document.querySelectorAll('.temporary-input');
+  inputEls.forEach(input=>input.parentNode.removeChild(input));
 })
 
 profileEls.forEach(el => el.addEventListener('click', (event) => {
