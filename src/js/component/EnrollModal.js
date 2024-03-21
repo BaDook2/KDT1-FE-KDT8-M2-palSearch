@@ -6,11 +6,11 @@ class Modal extends Component {
     super({
       tagName: 'dialog'
     });
-    this.el.setAttribute('open','');
+    this.el.setAttribute('open', '');
     this.el.classList.add('modal', 'hide');
   }
-  render(){
-    
+  render() {
+
   }
 }
 
@@ -18,8 +18,11 @@ export default class EnrollModal extends Modal {
   render() {
     this.el.classList.add('enroll__modal');
     this.el.innerHTML = /* html */ `
-  <img src="../../../api/public/images/paldeck/001.png"
-    alt="photo">
+    <div class = "photo__container">
+      <img src="../../img/pal_image/paldeck/001.png"alt="photo">
+      <div class = "fake__box">Upload Image</div>
+      <input type = "file" alt="input_photo">
+    </div>
   <div class="information__container">
     <div class='container id__cotainer'>
       <span class='id'>ID</span>
@@ -39,6 +42,6 @@ export default class EnrollModal extends Modal {
     const closeIcon = new MaterialSymbol().el;
     closeIcon.classList.add('close-icon');
     closeIcon.textContent = "close";
-    this.el.append(closeIcon); 
+    this.el.append(closeIcon);
   }
 }

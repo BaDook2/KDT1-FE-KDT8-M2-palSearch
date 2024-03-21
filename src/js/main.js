@@ -68,9 +68,15 @@ manageComponent.addEventListener('click', () => {
 
 // Manage Enroll
 const enrollOpenButton = document.querySelector('.enroll');
-const enrollConfirmButton = document.querySelector('.enroll__button');
-const enrollCloseButton = document.querySelector('.enroll__modal .close-icon');
 const enrollModal = document.querySelector('.enroll__modal')
+const enrollConfirmButton = enrollModal.querySelector('.enroll__button');
+const enrollCloseButton = enrollModal.querySelector('.close-icon');
+const fake__box = document.querySelector('.fake__box');
+
+fake__box.addEventListener('click',(event)=>{
+  event.target.parentNode.querySelector('input').click();
+});
+
 
 enrollOpenButton.addEventListener('click', () => {
   enrollModal.classList.toggle('hide');
@@ -103,6 +109,8 @@ enrollCloseButton.addEventListener('click', () => {
   enrollModal.classList.add('hide');
 })
 
+
+
 // Manage Modify
 const valueChangeInput = document.querySelectorAll('.value-change')
 const modifyButtonEls = document.querySelectorAll('.modify__button');
@@ -114,8 +122,11 @@ modifyOpenButton.addEventListener('click', () => {
     buttonParentEl.querySelector('.modify--confirm__button').classList.add('hide');
     buttonParentEl.querySelector('.close-icon').classList.add('hide');
   });
-  profileDeleteIconEls.forEach(el => el.classList.add('hide'));
+  
   enrollModal.classList.add('hide');
+  const inputEls = document.querySelectorAll('.temporary-input');
+  inputEls.forEach(input=>input.parentNode.removeChild(input));
+  profileDeleteIconEls.forEach(el => el.classList.add('hide'));
 })
 
 modifyButtonEls.forEach(modifyButton => {
