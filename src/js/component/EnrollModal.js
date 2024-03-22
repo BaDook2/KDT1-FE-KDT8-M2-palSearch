@@ -40,7 +40,7 @@ export default class EnrollModal extends Modal {
   </div>
     `
     const closeIcon = new MaterialSymbol().el;
-    closeIcon.classList.add('close-icon');
+    closeIcon.classList.add('modal__close-icon');
     closeIcon.textContent = "close";
     this.el.append(closeIcon);
   }

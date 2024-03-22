@@ -8,16 +8,17 @@
   margin: 0 auto;
   gap: 1.5em;
   overflow: hidden;
-  margin-top: 2em;
-  position:relative;
+  position: relative;
+
   .profile {
-    border: 4px solid rgb(51, 153, 255,.5);
+    border: 4px solid rgb(51, 153, 255, .5);
     border-radius: var(--list-border-radius);
     box-sizing: border-box;
     display: flex;
     overflow: hidden;
     position: relative;
-    .modify__button{
+
+    .modify__button {
       position: absolute;
       bottom: 0;
       right: 0;
@@ -27,15 +28,18 @@
       height: 100%;
       transition: transform .5s;
       width: 4em;
-      &:hover{
+
+      &:hover {
         background-color: white;
         color: var(--color-black-50);
       }
-      &.hide{
+
+      &.hide {
         transform: translateX(110%);
       }
     }
-    .modify--confirm__button{
+
+    .modify--confirm__button {
       position: absolute;
       bottom: 0;
       right: 0;
@@ -46,11 +50,12 @@
       width: 4em;
       transition: transform .5s;
 
-      &:hover{
-        background-color: rgb(250,250,250);
+      &:hover {
+        background-color: rgb(250, 250, 250);
         color: rgb(79, 102, 255);
       }
-      &.hide{
+
+      &.hide {
         transform: translateY(-100%);
       }
     }
@@ -59,49 +64,56 @@
       width: 8em;
       height: 8em;
     }
+
     .profile__description {
       flex-grow: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       border-radius: 0 var(--list-border-radius) var(--list-border-radius) 0;
-      background-color: rgb(51, 153, 255,.2);
+      background-color: rgb(51, 153, 255, .2);
+
       span {
         margin-left: 0.5em;
       }
-      input{
-        width:8em;
+
+      input {
+        width: 8em;
       }
     }
   }
-  .delete-icon{
-    position:absolute;
-    top:1rem;
-    right:1rem;
+
+  .delete-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     background-color: transparent;
-    color:black;
+    color: black;
     visibility: visible;
-    opacity:1;
+    opacity: 1;
     transition: opacity .5s;
-    &.hide{
+
+    &.hide {
       visibility: hidden;
-      opacity:0;
+      opacity: 0;
       cursor: default;
     }
   }
-  .close-icon{
+
+  .modify__close-icon {
     position: absolute;
     top: 0;
     right: 2.5em;
     font-size: 1.5em;
-    color:  rgb(79, 102, 255);
+    color: rgb(79, 102, 255);
     background-color: transparent;
     transition: transform .5s;
-    
-    &:hover{
+
+    &:hover {
       color: white;
     }
-    &.hide{
+
+    &.hide {
       transform: translateY(-100%);
     }
   }

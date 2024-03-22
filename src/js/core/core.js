@@ -9,7 +9,7 @@ export default class Component{
 
 export class Store{
   constructor(payload = {}){
-    const {tagName = "div", palObj = {}} = payload;
+    const {tagName = "div"} = payload;
     this.el = document.createElement(tagName);
   }
   render(){}
