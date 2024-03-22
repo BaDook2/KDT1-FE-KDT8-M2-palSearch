@@ -19,9 +19,9 @@ export default class EnrollModal extends Modal {
     this.el.classList.add('enroll__modal');
     this.el.innerHTML = /* html */ `
     <div class = "photo__container">
-      <img src="../../img/pal_image/paldeck/001.png"alt="photo">
+      <img src="../../img/pal_image/paldeck/001.png" alt="photo" class = "preview__image">
       <div class = "fake__box">Upload Image</div>
-      <input type = "file" alt="input_photo">
+      <input type = "file" alt="input_photo" class = "upload__image">
     </div>
   <div class="information__container">
     <div class='container id__cotainer'>

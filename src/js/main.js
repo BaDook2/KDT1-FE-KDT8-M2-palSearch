@@ -34,7 +34,6 @@ searchInputEl.addEventListener('keydown', (event) => {
     if (inputValue === '') return palObjectArr;
     let palFilteredStorage = [];
     palObjectArr.forEach((palObj) => {
-      console.log(Object.values(palObj))
       if (Object.values(palObj).includes(inputValue)) {
         palFilteredStorage.push(palObj);
       }
@@ -43,8 +42,7 @@ searchInputEl.addEventListener('keydown', (event) => {
   }
   if (event.keyCode === 13) {
     const inputValue = searchInputEl.value;
-    const newPalStorage = searchPal(new palStore(["id","key","name"]
-    ).el, inputValue);
+    const newPalStorage = searchPal(new palStore(["id", "key", "name"]).el, inputValue);
     flexContainerEl.innerHTML = '';
     flexContainerEl.append(new FlexContainer(newPalStorage).el);
   }
@@ -68,12 +66,13 @@ manageComponent.addEventListener('click', () => {
 
 // Manage Enroll
 const enrollOpenButton = document.querySelector('.enroll');
-const enrollModal = document.querySelector('.enroll__modal')
+const enrollModal = document.querySelector('.enroll__modal');
+const uploadImagebutton = enrollModal.querySelector('.upload__image');
 const enrollConfirmButton = enrollModal.querySelector('.enroll__button');
 const enrollCloseButton = enrollModal.querySelector('.close-icon');
 const fake__box = document.querySelector('.fake__box');
 
-fake__box.addEventListener('click',(event)=>{
+fake__box.addEventListener('click', (event) => {
   event.target.parentNode.querySelector('input').click();
 });
 
@@ -86,17 +85,33 @@ enrollOpenButton.addEventListener('click', () => {
     button.parentNode.querySelector('.close-icon').classList.add('hide');
   });
   const inputEls = document.querySelectorAll('.temporary-input');
-  inputEls.forEach(input=>input.parentNode.removeChild(input));
+  inputEls.forEach(input => input.parentNode.removeChild(input));
   profileDeleteIconEls.forEach(el => el.classList.add('hide'));
 })
 
+const previewImg = enrollModal.querySelector('.preview__image');
+
+const fileUpload = () => {
+  const selectedFile = uploadImagebutton.files[0];
+  const fileReader = new FileReader();
+
+  fileReader.onload = () => {
+    previewImg.src = fileReader.result;
+  }
+  if(selectedFile){
+    fileReader.readAsDataURL(selectedFile);
+  }
+}
+uploadImagebutton.addEventListener('change',fileUpload);
+
+
 enrollConfirmButton.addEventListener('click', () => {
-  const idInputEl = document.querySelector('.id__input');
-  const keyInputEl = document.querySelector('.key__input');
-  const nameInputEl = document.querySelector('.name__input');
+  const idInputEl = enrollModal.querySelector('.id__input');
+  const keyInputEl = enrollModal.querySelector('.key__input');
+  const nameInputEl = enrollModal.querySelector('.name__input');
+
   const flexItem = new FlexItem({
-    "image": "../../../api/public/images/paldeck/001.png",
-    // "image":`${idInputEl.value}`,
+    "image": `${previewImg.src}`,
     "id": `${idInputEl.value}`,
     "key": `${keyInputEl.value}`,
     "name": `${nameInputEl.value}`,
@@ -104,6 +119,8 @@ enrollConfirmButton.addEventListener('click', () => {
 
   flexContainerEl.prepend(flexItem);
 })
+
+
 
 enrollCloseButton.addEventListener('click', () => {
   enrollModal.classList.add('hide');
@@ -122,10 +139,10 @@ modifyOpenButton.addEventListener('click', () => {
     buttonParentEl.querySelector('.modify--confirm__button').classList.add('hide');
     buttonParentEl.querySelector('.close-icon').classList.add('hide');
   });
-  
+
   enrollModal.classList.add('hide');
   const inputEls = document.querySelectorAll('.temporary-input');
-  inputEls.forEach(input=>input.parentNode.removeChild(input));
+  inputEls.forEach(input => input.parentNode.removeChild(input));
   profileDeleteIconEls.forEach(el => el.classList.add('hide'));
 })
 
@@ -147,7 +164,7 @@ modifyButtonEls.forEach(modifyButton => {
   });
 
   const closeModifyIcon = modifyButton.parentNode.querySelector('.close-icon');
-  
+
   closeModifyIcon.addEventListener('click', () => {
     const clickedParentEl = closeModifyIcon.parentNode;
     const modifyConfirmButton = clickedParentEl.querySelector('.modify--confirm__button');
@@ -182,7 +199,7 @@ deleteOpenButton.addEventListener('click', () => {
   });
   enrollModal.classList.add('hide');
   const inputEls = document.querySelectorAll('.temporary-input');
-  inputEls.forEach(input=>input.parentNode.removeChild(input));
+  inputEls.forEach(input => input.parentNode.removeChild(input));
 })
 
 profileEls.forEach(el => el.addEventListener('click', (event) => {
@@ -192,6 +209,8 @@ profileEls.forEach(el => el.addEventListener('click', (event) => {
     targetEl.remove();
   }
 }))
+
+
 
 // ICON
 gridIconEl.addEventListener('click', () => {
