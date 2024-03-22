@@ -98,11 +98,11 @@ const fileUpload = () => {
   fileReader.onload = () => {
     previewImg.src = fileReader.result;
   }
-  if(selectedFile){
+  if (selectedFile) {
     fileReader.readAsDataURL(selectedFile);
   }
 }
-uploadImagebutton.addEventListener('change',fileUpload);
+uploadImagebutton.addEventListener('change', fileUpload);
 
 
 enrollConfirmButton.addEventListener('click', () => {
@@ -118,6 +118,54 @@ enrollConfirmButton.addEventListener('click', () => {
   }).el;
 
   flexContainerEl.prepend(flexItem);
+  modifyButtonEls = document.querySelectorAll('.modify__button');
+  profileDeleteIconEls = document.querySelectorAll('.delete-icon');
+  const targetModifyButton = flexItem.querySelector('.modify__button');
+  const targetModifyConfirmButton = flexItem.querySelector('.modify--confirm__button');
+  const targetCloseModifyIcon = flexItem.querySelector('.close-icon');
+
+
+  targetModifyButton.addEventListener('click', () => {
+    const inputEl = document.createElement('input');
+    inputEl.classList.add('temporary-input');
+    targetModifyConfirmButton.classList.remove('hide');
+    targetCloseModifyIcon.classList.remove('hide');
+    targetModifyConfirmButton.classList.remove('hide');
+    const targetItems = flexItem.querySelectorAll('.value-change');
+    targetItems.forEach(el => {
+      const inputEl = document.createElement('input');
+      inputEl.classList.add('temporary-input');
+      el.innerHTML = ''; // 기존 내용 제거
+      el.appendChild(inputEl);
+    })
+  })
+
+  targetCloseModifyIcon.addEventListener('click', () => {
+    targetModifyConfirmButton.classList.add('hide');
+    targetCloseModifyIcon.classList.add('hide');
+    flexItem.querySelectorAll('input').forEach(inputEl => {
+      inputEl.parentNode.innerHTML = `${inputEl.value}`
+    })
+  })
+
+  targetModifyConfirmButton.addEventListener('click', () => {
+    flexItem.querySelectorAll('input').forEach(inputEl => {
+      inputEl.parentNode.innerHTML = `${inputEl.value}`
+    })
+  })
+  const targetDeleteIcon = flexItem.querySelector('.delete-icon');
+  targetDeleteIcon.addEventListener('click',()=>{
+    flexItem.remove();
+  })
+  // profileEls.forEach(el => el.addEventListener('click', (event) => {
+  //   if (event.target.classList.contains('delete-icon')) {
+  //     const clickedEl = event.target;
+  //     const targetEl = clickedEl.parentNode;
+  //     targetEl.remove();
+  //   }
+  // }))
+
+
 })
 
 
@@ -129,9 +177,10 @@ enrollCloseButton.addEventListener('click', () => {
 
 
 // Manage Modify
-const valueChangeInput = document.querySelectorAll('.value-change')
-const modifyButtonEls = document.querySelectorAll('.modify__button');
+let modifyButtonEls = document.querySelectorAll('.modify__button');
 
+// modify 버튼을 클릭했을 때 다른 요소들은 hide, 
+// profile에 있는 modify만 rmove('.hide')
 modifyOpenButton.addEventListener('click', () => {
   modifyButtonEls.forEach(button => {
     button.classList.toggle('hide');
@@ -146,6 +195,7 @@ modifyOpenButton.addEventListener('click', () => {
   profileDeleteIconEls.forEach(el => el.classList.add('hide'));
 })
 
+// 각 profile에 있는 modify Button이 눌렸을 때
 modifyButtonEls.forEach(modifyButton => {
   modifyButton.addEventListener('click', (event) => {
     const clickedParentEl = event.target.parentNode;
@@ -168,14 +218,16 @@ modifyButtonEls.forEach(modifyButton => {
   closeModifyIcon.addEventListener('click', () => {
     const clickedParentEl = closeModifyIcon.parentNode;
     const modifyConfirmButton = clickedParentEl.querySelector('.modify--confirm__button');
-
+    const inputEls = clickedParentEl.querySelectorAll('input').forEach(inputEl => {
+      inputEl.parentNode.innerHTML = `${inputEl.value}`
+    })
     modifyConfirmButton.classList.add('hide');
     closeModifyIcon.classList.add('hide');
-    closeModifyIcon.classList.remove('add');
   });
 });
 
-const modifyConfirmButtonEls = document.querySelectorAll('.modify--confirm__button');
+let modifyConfirmButtonEls = document.querySelectorAll('.modify--confirm__button');
+
 modifyConfirmButtonEls.forEach(confirmButton => {
   confirmButton.addEventListener('click', () => {
     const targetItem = confirmButton.parentNode;
@@ -186,8 +238,8 @@ modifyConfirmButtonEls.forEach(confirmButton => {
 });
 
 // Manage Delete
-const profileEls = document.querySelectorAll(`.profile`);
-const profileDeleteIconEls = document.querySelectorAll('.delete-icon');
+let profileEls = document.querySelectorAll(`.profile`);
+let profileDeleteIconEls = document.querySelectorAll('.delete-icon');
 
 deleteOpenButton.addEventListener('click', () => {
   profileDeleteIconEls.forEach(el => el.classList.toggle('hide'));
