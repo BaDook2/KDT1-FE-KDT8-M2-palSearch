@@ -26,8 +26,8 @@ export class App extends Component {
       this.el.append(theHeader, routerView, theFooter);
     }
 
-    // this.showLoadingScreen();
-    // setTimeout(()=>this.showMainScreen(),2000);
-    this.showMainScreen();
+    this.showLoadingScreen();
+    setTimeout(()=>this.showMainScreen(),2000);
+    // this.showMainScreen();
   }
 }
