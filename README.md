@@ -21,7 +21,10 @@
 - CSS
     ~~- 상대수치 사용(rem, em)~~
 - JavaScript
-    ~~- DOM event 조작~~
+    ~~- DOM event 조작~~ <br>
+
+User Flow
+![alt text](image.png)<br>
 
 
 아쉬운 것 <br>
