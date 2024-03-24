@@ -8,7 +8,7 @@ export default class Loading extends Component{
   render(){
     this.el.innerHTML = /* html */`
     <div class = "loadingEl">
-      <img src="/img/pal_image/paldeck/010.png" alt="pal_photo">
+      <img src="KDT8-M2/img/pal_image/paldeck/010.png" alt="pal_photo">
     </div>
     <span>Please Wait!</span>
     `
