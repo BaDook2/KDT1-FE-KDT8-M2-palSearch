@@ -5,6 +5,7 @@ import Inner from "./Inner";
 import Manage from "./Manage";
 import GridIcon from "./GridIcon";
 import SearchContainer from "./Search";
+import headerImg from "../../../img/pal_image/paldeck/010.png";
 
 export default class TheHeader extends Component {
   constructor() {
@@ -28,7 +29,7 @@ class Logo extends Component{
   };
   render(){
     this.el.classList.add('logo');
-    this.el.src = "../../../img/palworld_logo.png"
+    this.el.src = `${headerImg}`
   }
 }
 class Utils extends Component {
