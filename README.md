@@ -24,8 +24,16 @@
     ~~- DOM event 조작~~ <br>
 
 User Flow
-![alt text](image.png)<br>
+![user Flow](image-2.png)<br>
 
+Loading image
+![Loading image](image-1.png)<br>
+
+Header
+![alt text](image-3.png)
+
+Manage Elements
+![alt text](image-4.png)
 
 아쉬운 것 <br>
 1. 과제 기간은 2주였으나 1주는 강의를 다시 보는데 사용하느라, 과제를 하는 데에 1주만 할애 한 것이 매우 아쉽다.
