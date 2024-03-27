@@ -7,6 +7,7 @@
 
 <br>
 <br>
+배포사이트
 <img alt="SASS" src ="https://img.shields.io/badge/vercel-ffffff.svg?&style=for-the-badge&logo=vercel&logoColor=black"/><br>
 
 ### **<필수 요구사항>**
