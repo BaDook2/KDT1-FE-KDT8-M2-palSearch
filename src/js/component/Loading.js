@@ -1,5 +1,5 @@
 import Component from "../core/core";
-import loadingImg from "../../../img/pal_image/paldeck/010.png";
+import loadingImg from "/img/pal_image/paldeck/010.png";
 
 export default class Loading extends Component{
   constructor(){

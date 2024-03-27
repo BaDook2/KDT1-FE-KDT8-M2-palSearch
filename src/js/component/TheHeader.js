@@ -1,11 +1,10 @@
 import Component from "../core/core";
-import GridContainer from "./GridIcon";
 import ListIcon from "./ListIcon";
 import Inner from "./Inner";
 import Manage from "./Manage";
 import GridIcon from "./GridIcon";
 import SearchContainer from "./Search";
-import headerImg from "../../../img/pal_image/paldeck/010.png";
+import headerImg from "/img/palworld_logo.png";
 
 export default class TheHeader extends Component {
   constructor() {

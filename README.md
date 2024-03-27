@@ -26,19 +26,19 @@
 ### [배포용 사이트](https://pal-search.vercel.app/)
 
 User Flow
-![user Flow](/img/README/user_flow.png)<br>
+![user Flow](/public/img/README/user_flow.png)<br>
 
 Loading image
-![Loading image](/img/README/loading_page.png)<br>
+![Loading image](/public/img/README/loading_page.png)<br>
 
 Header
-![alt text](/img/README/hedaer.png)
+![alt text](/public/img/README/hedear.png)
 
 Manage Elements
-![alt text](/img/README/manage_Els.png)
+![alt text](/public/img/README/manage_Els.png)
 
 아쉬운 것 <br>
-1. vite를 vercel을 통해 배포하려고 하였으나 이미지가 전부 엑박으로 보인다. 이미지 경로 문제라고 생각하여 구글링을 해보았지만, 해결방법을 찾지 못했다.
+~~1. vite를 vercel을 통해 배포하려고 하였으나 이미지가 전부 엑박으로 보인다. 이미지 경로 문제라고 생각하여 구글링을 해보았지만, 해결방법을 찾지 못했다.~~
 1. 과제 기간은 2주였으나 1주는 강의를 다시 보는데 사용하느라, 과제를 하는 데에 1주만 할애 한 것이 매우 아쉽다.
 2. 검색 기능이 이상하게 동작한다.
 3. 강의에 나온 예시처럼 api 요청을 하고난 뒤에 로딩을 띄우고 싶었으나, 아직 하는 방법을 몰라 처음 렌더링 할 때 setTimeOut 함수를 통해 임의로 로딩을 시켰다.
