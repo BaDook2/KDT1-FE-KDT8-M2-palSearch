@@ -1,9 +1,9 @@
 import {
   App
-} from "./App";
-import FlexItem from "./component/FlexItem";
-import FlexContainer from "./component/FlexContainer";
-import palStore from "./Store/palInfo";
+} from "/src/js/App";
+import FlexItem from "/src/js/component/FlexItem";
+import FlexContainer from "/src/js/component/FlexContainer";
+import palStore from "/src/js/Store/palInfo";
 
 const bodyEl = document.querySelector('body');
 

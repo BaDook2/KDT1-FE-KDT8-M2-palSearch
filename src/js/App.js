@@ -1,8 +1,8 @@
 import Component from "/src/js/core";
-import TheFooter from "./component/TheFooter";
-import TheHeader from "./component/TheHeader";
-import Main from "./component/Main";
-import Loading from "./component/Loading";
+import TheFooter from "/src/js/component/TheFooter";
+import TheHeader from "/src/js/component/TheHeader";
+import Main from "/src/js/component/Main";
+import Loading from "/src/js/component/Loading";
 
 
 export class App extends Component {
