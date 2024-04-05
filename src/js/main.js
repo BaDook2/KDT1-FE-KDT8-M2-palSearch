@@ -12,7 +12,7 @@ bodyEl.append(new App().el);
   await new Promise((resolve) => {
     setTimeout(() => {
       resolve();
-    }, 2000); // 2초 후에 실행
+    }, 2000);
   });
 
   // Header
@@ -35,7 +35,7 @@ bodyEl.append(new App().el);
       });
       return palFilteredStorage;
     };
-    if (event.keyCode === 13) {
+    if (event.code === "Enter") {
       const mainInner = document.querySelector(".main-inner");
       const inputValue = searchInputEl.value;
       const newPalStorage = searchPal(

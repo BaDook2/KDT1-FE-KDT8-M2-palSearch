@@ -8,20 +8,22 @@ import ViewMore from "/src/js/component/ViewMore";
 export default class Main extends Component {
   constructor() {
     super({
-      tagName: 'Main'
-    })
+      tagName: "Main",
+    });
   }
   render() {
     const innerEl = new Inner().el;
-    innerEl.classList.add('main-inner');
+    innerEl.classList.add("main-inner");
     this.el.append(innerEl);
-    // innerEl.append(new GridContainer().el);
     const itemStorage = new palStore().el;
-    // innerEl.append(new FlexContainer(itemStorage).el, new ViewMore().el);
-    const isLocalStorage = localStorage.getItem('data');
-    // console.log(isLocalStorage);
+    const isLocalStorage = localStorage.getItem("data");
     if (isLocalStorage) {
-      const localStorageData = JSON.parse(localStorage.getItem('data'));
+      let localStorageData;
+      try {
+        JSON.parse(localStorage.getItem("data"));
+      } catch (error) {
+        console.error("Error parsing JSON data from localStorage:", error);
+      }
       innerEl.append(new FlexContainer(localStorageData).el, new ViewMore().el);
     } else {
       innerEl.append(new FlexContainer(itemStorage).el, new ViewMore().el);

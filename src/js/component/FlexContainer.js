@@ -6,12 +6,12 @@ import FlexItem from "/src/js/component/FlexItem";
 import palStore from "/src/js/Store/palInfo";
 
 export default class FlexContainer extends Store {
-  constructor(palObjArr = new palStore().el = palObjArr.length) {
+  constructor(palObjArr = new palStore()) {
     super({
       tagName: 'ul'
     });
     this.el.classList.add('flex-container');
-    this.render(palObjArr);
+    this.render(palObjArr.data);
   }
   render(palObjArr) {
     const fragment = document.createDocumentFragment();
