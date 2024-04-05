@@ -17,7 +17,13 @@
     display: flex;
     overflow: hidden;
     position: relative;
-
+    
+    .profile__description{
+      div{
+        margin-left: 1rem;
+        display:flex;
+      }
+    }
     .modify__button {
       position: absolute;
       bottom: 0;

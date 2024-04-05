@@ -12,29 +12,39 @@ export default class FlexItem extends Store {
   }
 
   render(palObj) {
+    const { id, key, image, name } = palObj;
     this.el.innerHTML = /* html */ `
-    <img src = "${palObj["image"]}" alt = "${palObj["name"]}_photo" class = "profile__photo pal-image">
-    <div class = "profile__description">
-    <span>id =<span class = "value-change pal-id">${palObj["id"]}</span>
-    </span>
-    <span>key =<span class = "value-change pal-key">${palObj["key"]}</span>
-    </span>
-    <span>name =<span class = "value-change pal-name">${palObj["name"]}</span>
-    </span>
-    </div>
+    <img src = "${image}" alt = "${name}_photo" class = "profile__photo pal-image">
+      <dl class = "profile__description">
+      <div>
+        <dt>id</dt>
+        <dd><span class = "value-change pal-id"> = ${id}</span></dd>
+      </div>
+      <div>
+        <dt>key</dt>
+        <dd><span class = "value-change pal-key"> = ${key}</span></dd>
+        </div>
+      <div>
+        <dt>name</dt>
+        <dd><span class = "value-change pal-name"> = ${name}</span></dd>
+      </div>
+    </dl>
     <button class = "modify__button hide">Modify</button>
     <button class = "modify--confirm__button hide">Confirm</button>
     `;
 
-    const deleteItemIcon = new MaterialSymbol().el;
-    const closeModifyIcon = new MaterialSymbol().el;
-    deleteItemIcon.classList.add("delete-icon", "hide");
-    closeModifyIcon.classList.add("modify__close-icon", "hide");
+    const createIcon = (className, text) => {
+      const icon = new MaterialSymbol().el;
+      icon.classList.add(className, "hide");
+      icon.textContent = text;
+      return icon;
+    };
 
-    deleteItemIcon.textContent = "close";
-    closeModifyIcon.textContent = "close";
+    const deleteItemIcon = createIcon("delete-icon", "close");
+    const closeModifyIcon = createIcon("modify__close-icon", "close");
     this.el.append(deleteItemIcon, closeModifyIcon);
 
     return this.el;
   }
+
 }
