@@ -1,5 +1,4 @@
-import Component from "../core/core";
-
+import Component from "/src/js/core";
 export default class GridIcon extends Component{
   constructor(){
     super({tagName:'a'})

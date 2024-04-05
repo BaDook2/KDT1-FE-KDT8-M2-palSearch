@@ -1,8 +1,9 @@
 import {
   Store
-} from "../core/core";
-import FlexItem from "./FlexItem";
-import palStore from "../Store/palInfo";
+} from "/src/js/core";
+
+import FlexItem from "/src/js/component/FlexItem";
+import palStore from "/src/js/Store/palInfo";
 
 export default class FlexContainer extends Store {
   constructor(palObjArr = new palStore().el = palObjArr.length) {

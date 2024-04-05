@@ -1,9 +1,9 @@
-import Component from "../core/core";
+import Component from "/src/js/core";
 import GridContainer from "./GridContainer";
-import Inner from "./Inner";
-import FlexContainer from "./FlexContainer";
-import palStore from "../Store/palInfo";
-import ViewMore from "./ViewMore";
+import Inner from "/src/js/component/Inner";
+import FlexContainer from "/src/js/component/FlexContainer";
+import palStore from "/src/js/Store/palInfo";
+import ViewMore from "/src/js/component/ViewMore";
 
 export default class Main extends Component {
   constructor() {

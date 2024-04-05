@@ -1,5 +1,5 @@
-import MaterialSymbol from "./MaterialSymbol";
-import Component from "../core/core";
+import MaterialSymbol from "/src/js/Component/MaterialSymbol";
+import Component from "/src/js/core";
 
 class Modal extends Component {
   constructor() {

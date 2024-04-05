@@ -1,4 +1,4 @@
-import Component from "../core/core";
+import Component from "/src/js/core";
 import loadingImg from "/img/pal_image/paldeck/010.png";
 
 export default class Loading extends Component{

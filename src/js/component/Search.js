@@ -1,5 +1,5 @@
-import MaterialSymbol from "./MaterialSymbol";
-import Component from "../core/core";
+import MaterialSymbol from "/src/js/component/MaterialSymbol";
+import Component from "/src/js/core";
 export default class SearchContainer extends Component{
   constructor(){
     super();

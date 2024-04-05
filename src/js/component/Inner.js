@@ -1,5 +1,4 @@
-import Component from "../core/core";
-
+import Component from "/src/js/core";
 export default class Inner extends Component{
   constructor(){
     super({tagName: 'section'});

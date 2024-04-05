@@ -1,4 +1,5 @@
-import Component from "../core/core"
+import Component from "/src/js/core";
+
 
 export default class MaterialSymbol extends Component{
   constructor(){

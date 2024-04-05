@@ -1,5 +1,5 @@
-import Component from "../core/core"
-import EnrollModal from "./EnrollModal";
+import Component from "/src/js/core";
+import EnrollModal from "/src/js/component/EnrollModal";
 
 
 export default class Manage extends Component{

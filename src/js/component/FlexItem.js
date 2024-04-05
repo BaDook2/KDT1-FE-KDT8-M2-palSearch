@@ -1,5 +1,8 @@
-import { Store } from "../core/core";
-import MaterialSymbol from "./MaterialSymbol";
+import {
+  Store
+} from "/src/js/core";
+
+import MaterialSymbol from "/src/js/component/MaterialSymbol";
 
 
 export default class FlexItem extends Store {

@@ -1,4 +1,4 @@
-import Component from "./core/core";
+import Component from "/src/js/core";
 import TheFooter from "./component/TheFooter";
 import TheHeader from "./component/TheHeader";
 import Main from "./component/Main";

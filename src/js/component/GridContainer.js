@@ -1,5 +1,4 @@
-import Component from "../core/core"
-
+import Component from "/src/js/core";
 
 class GridItem extends Component{
   constructor(){

@@ -1,9 +1,9 @@
-import Component from "../core/core";
-import ListIcon from "./ListIcon";
-import Inner from "./Inner";
-import Manage from "./Manage";
-import GridIcon from "./GridIcon";
-import SearchContainer from "./Search";
+import Component from "/src/js/core";
+import ListIcon from "/src/js/component/ListIcon";
+import Inner from "/src/js/component/Inner";
+import Manage from "/src/js/component/Manage";
+import GridIcon from "/src/js/component/GridIcon";
+import SearchContainer from "/src/js/component/Search";
 import headerImg from "/img/palworld_logo.png";
 
 export default class TheHeader extends Component {
