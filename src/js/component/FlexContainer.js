@@ -14,8 +14,11 @@ export default class FlexContainer extends Store {
     this.render(palObjArr);
   }
   render(palObjArr) {
+    const fragment = document.createDocumentFragment();
     for (let i = 0, max = palObjArr.length; i < max; i++) {
-      this.el.append(new FlexItem(palObjArr[i]).el);
+      const flexItem = new FlexItem(palObjArr[i]);
+      fragment.append(flexItem.el);
     }
+    this.el.append(fragment);
   }
 }

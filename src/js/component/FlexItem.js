@@ -1,22 +1,19 @@
-import {
-  Store
-} from "/src/js/core";
+import { Store } from "/src/js/core";
 
 import MaterialSymbol from "/src/js/component/MaterialSymbol";
-
 
 export default class FlexItem extends Store {
   constructor(palObj) {
     super({
-      tagName: 'li',
+      tagName: "li",
     });
-    this.el.classList.add('flex-item', 'profile');
+    this.el.classList.add("flex-item", "profile");
     this.render(palObj);
   }
 
   render(palObj) {
     this.el.innerHTML = /* html */ `
-    <img src = "${palObj["image"]}" alt="${palObj["name"]}_photo" class = "profile__photo pal-image">
+    <img src = "${palObj["image"]}" alt = "${palObj["name"]}_photo" class = "profile__photo pal-image">
     <div class = "profile__description">
     <span>id =<span class = "value-change pal-id">${palObj["id"]}</span>
     </span>
@@ -27,12 +24,12 @@ export default class FlexItem extends Store {
     </div>
     <button class = "modify__button hide">Modify</button>
     <button class = "modify--confirm__button hide">Confirm</button>
-    `
-    
+    `;
+
     const deleteItemIcon = new MaterialSymbol().el;
     const closeModifyIcon = new MaterialSymbol().el;
-    deleteItemIcon.classList.add('delete-icon', 'hide');
-    closeModifyIcon.classList.add('modify__close-icon', 'hide');
+    deleteItemIcon.classList.add("delete-icon", "hide");
+    closeModifyIcon.classList.add("modify__close-icon", "hide");
 
     deleteItemIcon.textContent = "close";
     closeModifyIcon.textContent = "close";
