@@ -297,7 +297,7 @@ bodyEl.append(new App().el);
     const palImage = document.querySelectorAll('.pal-image');
 
     const data = [];
-    for (let i = 0; i < idEls.length; i++) {
+    for (let i = 0, max = idEls.length; i < max; i++) {
       const item = {
         id: idEls[i].textContent,
         key: keyEls[i].textContent,

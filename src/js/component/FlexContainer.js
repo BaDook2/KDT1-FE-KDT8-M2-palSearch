@@ -14,7 +14,7 @@ export default class FlexContainer extends Store {
     this.render(palObjArr);
   }
   render(palObjArr) {
-    for (let i = 0; i < palObjArr.length; i++) {
+    for (let i = 0, max = palObjArr.length; i < max; i++) {
       this.el.append(new FlexItem(palObjArr[i]).el);
     }
   }
