@@ -1,50 +1,56 @@
-# **[ 직원 관리 서비스 ]**
+# **[ Pal 검색 서비스 ]**
 
-<aside>
-⭐ 직원들을 관리할 수 있는 관리자 서비스를 만들어 보세요.
-과제를 진행하시다가 **기술적으로 도움이 필요한 부분**이 생기시면 **멘토링 요청서에 질문으로 남긴 후, 주차별 멘토링 시간 때 멘토님께 질문**해 주시기 바랍니다❗
+사용한 기술 스택<br>
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img alt="SASS" src ="https://img.shields.io/badge/SASS-cc6699.svg?&style=for-the-badge&logo=Sass&logoColor=white"/>
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
 
-✔️ 난이도 : ⭐️⭐️
-
-</aside>
-
-### **<과제 수행 및 제출 방법>**
-
-1. 현재 저장소를 로컬에 클론(Clone)합니다.
-2. 자신의 본명으로 브랜치를 생성합니다.(구분 가능하도록 본명을 꼭 파스칼케이스로 표시하세요, `git branch KDT0_ParkYoungWoong`)
-3. 자신의 본명 브랜치에서 과제를 수행합니다.
-4. 과제 수행이 완료되면, 자신의 본명 브랜치를 원격 저장소에 푸시(Push)합니다.(`main` 브랜치에 푸시하지 않도록 꼭 주의하세요, `git push origin KDT0_ParkYoungWoong`)
-5. 저장소에서 `main` 브랜치를 대상으로 Pull Request 생성하면, 과제 제출이 완료됩니다!(E.g, `main` <== `KDT0_ParkYoungWoong`)
-
-- `main` 혹은 다른 사람의 브랜치로 절대 병합하지 않도록 주의하세요!
-- Pull Request에서 보이는 설명을 다른 사람들이 이해하기 쉽도록 꼼꼼하게 작성하세요!
-- Pull Request에서 과제 제출 후 절대 병합(Merge)하지 않도록 주의하세요!
-- 과제 수행 및 제출 과정에서 문제가 발생한 경우, 바로 담당 멘토나 강사에서 얘기하세요!
+<br>
+<br>
+배포사이트
+<img alt="SASS" src ="https://img.shields.io/badge/vercel-ffffff.svg?&style=for-the-badge&logo=vercel&logoColor=black"/><br>
 
 ### **<필수 요구사항>**
 
-- 프로필 페이지를 개발하세요.
-- 스크롤이 가능한 형태의 리스팅 페이지를 개발하세요.
-- 전체 페이지 데스크탑-모바일 반응형 페이지를 개발하세요.
-- 사진을 등록, 수정, 삭제가 가능해야 합니다.
-- 유저 플로우를 제작하여 리드미에 추가하세요.
-- 페이지가 보여지기 전에 로딩 애니메이션이 보이도록 만들어 보세요.
-- 직원 검색 기능을 추가해 보세요.
-- infinity scroll 기능을 추가해 보세요.
-- LocalStorage를 사용하세요
+#### <페이지>
+~~1. 로딩 페이지(애니메이션)~~
+1. 프로필 페이지
+- 스크롤이 가능한 형태의 리스팅 페이지
+- 전체 페이지 데스크탑-모바일 반응형 페이지
+
+#### <기능>
+- ~~사진 등록~~, ~~삭제~~, ~~수정~~, 편집(선택)
+- ~~직원 검색 기능~~
+- infinity scroll 기능
+- ~~LocalStorage~~
 - CSS
-    - 애니메이션 구현
-    - 상대수치 사용(rem, em)
+    ~~- 상대수치 사용(rem, em)~~
 - JavaScript
-    - DOM event 조작
+    ~~- DOM event 조작~~ <br>
 
-### **<선택 요구사항>**
+### [배포용 사이트](https://pal-search.vercel.app/)
 
-- 사진을 편집할 수 있는 기능을 추가해 보세요.
+User Flow
+![user Flow](/public/img/README/user_flow.png)<br>
 
-### **<화면 예시>**
-![임직원관리](https://github.com/KDT1-FE/KDT8-M2/assets/6160290/8560dd9d-68e4-4985-95b7-948c02351762)
-![임직원상세](https://github.com/KDT1-FE/KDT8-M2/assets/6160290/baec98f0-d17d-40e0-96fe-5cdc1e17104e)
+Loading image
+![Loading image](/public/img/README/loading_page.png)<br>
 
-### **<유저 플로우>**
-![유저플로우](https://github.com/KDT1-FE/KDT8-M2/assets/6160290/072d62c5-38b8-43a0-bc36-1922b9fc796a)
+Header
+![alt text](/public/img/README/hedear.png)
+
+Manage Elements
+![alt text](/public/img/README/manage_Els.png)
+
+아쉬운 것 <br>
+1. vite를 vercel을 통해 배포하려고 하였으나 이미지가 전부 엑박으로 보인다. 이미지 경로 문제라고 생각하여 구글링을 해보았지만, 해결방법을 찾지 못했다.
+- public 폴더에 넣으면 해결되는줄 알고 해봤으나 소용이 없었다.
+2. 과제 기간은 2주였으나 1주는 강의를 다시 보는데 사용하느라, 과제를 하는 데에 1주만 할애 한 것이 매우 아쉽다..
+3. 강의에 나온 예시처럼 api 요청을 하고난 뒤에 로딩을 띄우고 싶었으나, 아직 하는 방법을 몰라 처음 렌더링 할 때 setTimeOut 함수를 통해 임의로 로딩을 시켰다.
+4. 컴포넌트를 사용하려다 보니 불필요할 정도로 많이 나눠진 것 같다.
+5. 게임 캐릭터(pal)의 api를 외국인 분이 깃헙에 올려주신 것을 배포해서 해보려고 하였으나, 이해도가 부족하여 못했다.
+6. 여전히 BEM 방법론을 따르기 힘들다. (--는 상태, __는 하위요소?라고 하였으나, 상태로 나눠야 할 지, 하위요소로 취급해야 할 지 모르겠다.)
+7. main.js 부분에 Enroll을 통해 추가된 요소들마다 다른 버튼들과 상효작용하는 addEventListener를 일일이 추가해야 하는 것이 매우 비효율적이고, 코드가 너무 많이 들어간다고 생각했다.
+8. 최근 modal의 html 태그로 dialog 관련 많은 기능이 있다고 하는데 하나도 못써봤다.
+9. 웹을 어떻게 구성해야 할 지에 대해 감이 없어, 남들에 비해 아직 많이 느린 것 같다.
+10. 각각의 Manage Element들의 event들을 컴포넌트 단위로 나눌 수 있을 것 같은데, 방법을 몰라 Dom Event 관련 모든 함수들을 main.js에 다 넣은 것이 매우 아쉽다.
